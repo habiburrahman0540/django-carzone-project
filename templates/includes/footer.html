@@ -1,19 +1,18 @@
 <!-- Footer start -->
 <footer class="footer">
-
     <div class="sub-footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <p class="copy">© 2020 <a href="#">Carzone Corp.</a> All Rights Reserved . design and developed by <a href="http://www.devhabibur.com/"> Habibur Rahman</a></p>
+                    <p class="copy">© {% now 'Y'%} {{ data.footer_text }} and developed by <a href="http://www.devhabibur.com/" target="_blank">{{ data.developed_by}}</a></p>
                 </div>
                 <div class="col-lg-4">
                     <div class="social-list-2">
                         <ul>
-                            <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="{{data.facebook_link}}" target="_blank" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{data.twitter_link}}" target="_blank" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="{{data.google_plus_link}}" target="_blank" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="{{data.linkedIn_link}}" target="_blank" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
