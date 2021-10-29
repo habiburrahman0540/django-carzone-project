@@ -27,4 +27,4 @@ def car_details(request,id):
     }
     return render(request,'cars/car_details.html',context)
 def searchViews(request):
-    return render(request,'cars/car_search.html')
+    return render(request,'cars/search.html')
