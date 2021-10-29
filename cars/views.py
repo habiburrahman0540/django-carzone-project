@@ -26,5 +26,14 @@ def car_details(request,id):
         'info' : info,
     }
     return render(request,'cars/car_details.html',context)
+
 def searchViews(request):
-    return render(request,'cars/search.html')
+    car_info = Car.objects.order_by('-created_date')
+    if 'keyword' in request.GET:
+        keyword = request.GET['keyword']
+        if keyword:
+            car_info = car_info.filter(description__icontains=keyword)
+    context = {
+        'car_info' : car_info,
+    }
+    return render(request,'cars/search.html',context)
