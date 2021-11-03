@@ -1,5 +1,6 @@
 
 {% extends 'base.html'%}
+{% block title%} | Cars{% endblock %}
 {% block content %}
 {% load static %}
 {% load humanize %}
@@ -23,6 +24,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-12">
                 <div class="row">
+                    {% if car_info %}
                     {% for data in car_info %}
                     <div class="col-lg-6 col-md-6">
                         <div class="car-box-3">
@@ -88,6 +90,7 @@
                         </div>
                     </div>
                 {% endfor %}
+                {% endif %}
                 </div>
                 <!-- Page navigation start -->
                 <div class="pagination-box p-box-2 text-center">
@@ -182,6 +185,7 @@
                     </div>
 
                     <!-- Question start -->
+                    {% if info %}
                     <div class="widget question widget-3">
                         <h5 class="sidebar-title">Follow us</h5>
                         <div class="social-list clearfix">
@@ -193,6 +197,7 @@
                             </ul>
                         </div>
                     </div>
+                    {%endif%}
                 </div>
             </div>
         </div>

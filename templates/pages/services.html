@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+{% block title%} | services{% endblock %}
 {% block content %}
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
@@ -17,11 +18,34 @@
 <div class="services content-area">
     <div class="container">
         <!-- Main title -->
+        {% if service_section %}
+        <div class="main-title text-center">
+            <h1>{{service_section.service_section_title}} <span>{{service_section.service_section_title_extra}}</span></h1>
+        <p>{{service_section.service_section_description}}</p>
+        </div>
+        {% else %}
         <div class="main-title text-center">
             <h1>Our <span>Services</span></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
         </div>
+        {% endif %}
         <div class="row">
+            {% if services %}
+            {% for data in services %}
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="number">{{data.service_number}}</div>
+                    <div class="icon">
+                        <i class="flaticon-{{data.service_icon}}"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>{{data.service_title}}</h3>
+                        <p>{{data.service_description}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="service-info">
                     <div class="number">1</div>
@@ -130,11 +154,31 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
 <!-- Services end -->
 <!-- Service center strat -->
+{% if service_video %}
+<div class="service-center content-area-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="inside-car service-car">
+                    <iframe src="{{service_video.service_video_link}}" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="about-text">
+                    <h3>{{service_video.service_video_title}}</h3>
+                    <p>{{service_video.service_video_description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
 <div class="service-center content-area-5">
     <div class="container">
         <div class="row">
@@ -153,5 +197,6 @@
         </div>
     </div>
 </div>
+{% endif %}
 <!-- Service center end -->
 {% endblock %}

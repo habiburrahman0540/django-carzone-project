@@ -4,7 +4,7 @@ from pages.models import TopHeaderWithFooter
 from django.core.paginator import Paginator
 # Create your views here.
 def cars(request):
-    info = TopHeaderWithFooter.objects.get()
+    info = TopHeaderWithFooter.objects.first()
     car_info = Car.objects.order_by('-created_date')
     paginator = Paginator(car_info,1)
     page = request.GET.get('page')
@@ -30,7 +30,7 @@ def cars(request):
 def car_details(request,id):
     data = get_object_or_404(Car,pk=id)
     feature = data.features
-    info = TopHeaderWithFooter.objects.get()
+    info = TopHeaderWithFooter.objects.first()
     context = {
         'data' : data,
         'feature' :feature,

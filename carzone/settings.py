@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,12 +27,16 @@ SECRET_KEY = 'django-insecure-vu5)zcnrf1g@(8kr$xd41l8!2!ar09#7^0e4(gmt&d2@u^*p_h
 DEBUG = True
 
 ALLOWED_HOSTS = []
+LOGIN_REDIRECT_URL ='dashboard'
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'sections.apps.SectionsConfig',
     'pages.apps.PagesConfig',
+    'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
     'cars.apps.CarsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +47,15 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'ckeditor',
     'multiselectfield',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.linkedin',
+    'allauth.socialaccount.providers.github',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +154,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # for Media
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+   
+}
+SITE_ID = 1
+
+# email setting for sending email
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'habibur.rahman054@gmail.com'
+EMAIL_HOST_PASSWORD = 'h01745656666'
+EMAIL_USE_TLS = True

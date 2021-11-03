@@ -1,0 +1,106 @@
+#header{
+    background-color: #416564;
+    box-shadow: 0px 0px 3px 0px #fff;
+    border-bottom: 1px solid #FFF;
+}
+#header a:link, #header a:visited{
+   
+}
+body{
+    background-color: #F1F1F1;
+}
+div.breadcrumbs, #nav-sidebar {
+    background-color: #024a48;
+    border-bottom: 1px solid #FFF;
+}
+.module h2, .module caption, .inline-group h2{
+    background-color: #416564; 
+}
+.object-tools a:link, .object-tools a:visited{
+    background-color: #416564; 
+}
+.button.default, input[type=submit].default, .submit-row input.default{
+    background-color: #416564; 
+}
+.button, input[type=submit], input[type=button], .submit-row input, a.button{
+    background-color: #416564; 
+}
+td, th{
+    border-bottom: 1px solid #F1F1F1;
+}
+h1{
+    color:#000 !important
+}
+.toggle-nav-sidebar{
+    background-color: #416564;
+    border-right: 1px solid #416564
+}
+a:link, a:visited{
+    color: #fff;
+}
+#toolbar ,#changelist-filter, #content-related .module{
+    background-color: #416564 !important;
+    border-radius: 5px;
+}
+.module{
+    background-color: #F1F1F1;
+}
+.content{
+    color: #fff !important;
+}
+#recent-actions-module{
+    background-color: #416564 !important;
+}
+label, .required label, label.required{
+    color: #000 !important;
+}
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=number], input[type=tel], textarea, select, .vTextField{
+    color: #000;
+    background-color: #F1F1F1;
+    border: 1px solid #000;
+}
+.help, p.help, form p.help, div.help, form div.help, div.help li{
+    color: #000;
+}
+p.datetime{
+    color: #000 !important;
+}
+.datetime span{
+    color: #000 !important;
+}
+.datetimeshortcuts a:link{
+    color: #000 !important;
+}
+#changelist .actions{
+    background-color: #416564 !important;
+}
+tr:nth-child(odd), .row-form-errors{
+    background-color: #0d4c4b !important;
+}
+tr:nth-child(even), tr:nth-child(even) .errorlist, tr:nth-child(odd) + .row-form-errors, tr:nth-child(odd) + .row-form-errors .errorlist{
+    background-color: #416564 !important;
+}
+#changelist .paginator{
+    background-color: #0d4c4b !important;
+}
+.submit-row{
+    background-color: #0d4c4b !important;
+}
+.toggle-nav-sidebar:hover{
+    background-color: #416564 !important;
+}
+.selector .selector-available h2{
+    background-color: #0d4c4b !important;
+}
+p,h2, p.file-upload, .file-upload a{
+    color: #000 !important;
+}
+.form-row{
+    border-bottom: 1px solid #39e1de !important;
+}
+#container > .main{
+    border: 10px solid #0d4c4b;
+}
+.main.shifted > #nav-sidebar{
+    border-right: 24px solid #416564 !important;
+}

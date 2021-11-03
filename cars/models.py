@@ -118,3 +118,21 @@ class Car(models.Model):
     def __str__(self):
         return self.car_title
     
+
+class FeaturedCarSection(models.Model):
+    featured_car_section_title = models.CharField(max_length=100)
+    featured_car_section_title_extra = models.CharField(max_length=100)
+    featured_car_section_description = models.TextField()
+    created_date = models.DateTimeField(auto_now_add = True,blank=True)
+    
+    def __str__(self):
+        return self.featured_car_section_title
+
+class LatestCarSection(models.Model):
+    Latest_car_section_title = models.CharField(max_length=100)
+    Latest_car_section_title_extra = models.CharField(max_length=100)
+    Latest_car_section_description = models.TextField()
+    created_date = models.DateTimeField(auto_now_add = True,blank=True)
+    
+    def __str__(self):
+        return self.Latest_car_section_title
