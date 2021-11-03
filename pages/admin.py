@@ -1,11 +1,18 @@
 from django.contrib import admin
-from .models import TeamSection,Team,TopHeaderWithFooter
+from .models import TeamSection,Team,TopHeaderWithFooter,Banner
 from cars.models import FeaturedCarSection ,LatestCarSection
 from django.utils.html import format_html
 # Register your models here.
 admin.site.site_header = 'Carzone Admin panel'
 admin.site.site_title = 'Admin'
 admin.site.index_title = 'Carzone'
+
+@admin.register(Banner)
+class AdminBanner(admin.ModelAdmin):
+    list_display = ('banner_title_1','banner_title_2','banner_title_2_extra','banner_image')
+    list_display_links = ('banner_title_1','banner_title_2','banner_title_2_extra','banner_image')
+    
+  
 @admin.register(FeaturedCarSection)
 class AdminFeaturedCarSection(admin.ModelAdmin):
     list_display = ('featured_car_section_title','featured_car_section_title_extra','featured_car_section_description')

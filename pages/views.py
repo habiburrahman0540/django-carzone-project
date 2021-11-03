@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from .models import Team,TopHeaderWithFooter
+from .models import Team,TopHeaderWithFooter,Banner
 from cars.models import Car,FeaturedCarSection,LatestCarSection
 # Create your views here.
 def homePage(request):
     teams = Team.objects.all()
+    banner = Banner.objects.all()
     FeaturedCarSections = FeaturedCarSection.objects.first()
     LatestCarSections = LatestCarSection.objects.first()
     featured_cars = Car.objects.order_by('-created_date').filter(is_featured=True)
@@ -13,6 +14,7 @@ def homePage(request):
     search_year = Car.objects.values_list('year',flat=True).distinct()
     search_body_style = Car.objects.values_list('body_style',flat=True).distinct()
     context ={
+        'banner':banner,
         'FeaturedCarSections': FeaturedCarSections,
         'LatestCarSections':LatestCarSections,
         'teams':teams,

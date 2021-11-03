@@ -1,12 +1,27 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Contact
+from .models import Contact,ContactSection,ContactUs
 from django.core.mail import send_mail
 from django.contrib.auth.models import User
 # Create your views here.
 
 def contactPage(request):
-    return render(request,'pages/contact.html')
+    contact_section = ContactSection.objects.first()
+    context = {
+        'contact_section': contact_section
+    }
+    if request.method == 'POST':
+        full_name = request.POST['full_name']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        subject = request.POST['subject']
+        message = request.POST['message']
+        contactus = ContactUs(full_name=full_name,email=email,phone=phone,subject=subject,message=message)
+        contactus.save()
+        messages.success(request,'Your request message has been successfully send. Please wait ,we will back to you soon.')
+        return redirect('contact')
+    
+    return render(request,'pages/contact.html',context)
 def inquery(request):
     if request.method == 'POST':
         user_id = request.POST['user_id']

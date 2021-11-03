@@ -39,4 +39,13 @@ class TopHeaderWithFooter(models.Model):
     google_plus_link = models.URLField(max_length=100,blank=True)
     linkedIn_link = models.URLField(max_length=100,blank=True)
     created_date = models.DateTimeField(auto_now_add = True,blank=True)
-        
+
+class Banner(models.Model):
+    banner_title_1 = models.CharField(max_length=255)
+    banner_title_2 = models.CharField(max_length=255)
+    banner_title_2_extra = models.CharField(max_length=255)
+    banner_image = models.ImageField(upload_to='photos/%Y/%m/%d/')
+    created_date = models.DateTimeField(auto_now_add = True,blank=True)
+    
+    def __str__(self):
+        return self.banner_title_1
